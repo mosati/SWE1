@@ -16,7 +16,12 @@ public class Main {
 		//Add numbers to array list
 		try {
 			while (s.hasNext()) {
-				list.add(s.nextDouble());
+				if(s.hasNextDouble()) {
+					list.add(s.nextDouble());
+				}
+				else {
+					s.next();
+				}
 			}
 		} catch (InputMismatchException e) {
 			System.err.println("Caught exception: " + e.getMessage());
