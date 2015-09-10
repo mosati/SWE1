@@ -57,10 +57,10 @@ How the program should work:
 How the final product works is a GUI window appears and the user enters in the desired numbers for the input, the program does the calculations, and then the required output appears in the window.
 
 How long actually took to complete the project
-	Requirements, Planning, and Design: 45 minutes
-	Coding: 
-	Testing: 
-	Documentation: 40 minutes
+* Requirements, Planning, and Design: 45 minutes
+* Coding: 
+* Testing: 
+* Documentation: 40 minutes
 
-	Total time: 
+Total time: 
 
