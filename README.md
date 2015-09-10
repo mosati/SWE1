@@ -8,6 +8,7 @@ Coding done by Justin, Testing done by Tyler, and Documentation done by Karl
 Program will be coded in Java and we will use version control on GitHub. 
 
 The steps we will take to complete the project are:
+
 1.	Design how the code should work and different features that should be included
 
 2.	Tyler will write up the program and inform us of any changes we need to make to our design
