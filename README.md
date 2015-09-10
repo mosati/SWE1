@@ -11,9 +11,9 @@ The steps we will take to complete the project are:
 
 1.	Design how the code should work and different features that should be included
 
-2.	Tyler will write up the program and inform us of any changes we need to make to our design
+2.	Justin will write up the program and inform us of any changes we need to make to our design
 
-3.	Justin will test the program after Tyler is done and if he encounters any problems then Tyler will go back and fix them. Keep repeating this process until no more problems are found. 
+3.	Tyler will test the program after Justin is done and if he encounters any problems then Justin will go back and fix them. Keep repeating this process until no more problems are found. 
 
 4.	Karl writes up the documentation to track the planning, progress, and final result of the project
 
