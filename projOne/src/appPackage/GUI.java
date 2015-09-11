@@ -225,11 +225,11 @@ public class GUI extends JFrame {
 		separator.setBounds(10, 130, 424, 2);
 		contentPane.add(separator);
 		
-		JLabel lblTest = new JLabel(" Select a file to use as input, or...");
+		JLabel lblTest = new JLabel(" Select a text file to use as input, or...");
 		lblTest.setBounds(10, 11, 325, 14);
 		contentPane.add(lblTest);
 		
-		JLabel lblEnterNumbersTo = new JLabel(" Enter numbers to be calculated.");
+		JLabel lblEnterNumbersTo = new JLabel(" Enter comma-delimited numbers to be calculated.");
 		lblEnterNumbersTo.setBounds(10, 51, 325, 14);
 		contentPane.add(lblEnterNumbersTo);
 	}
