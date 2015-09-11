@@ -1,9 +1,9 @@
 package appPackage;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class AssignmentOne {
-	public double ArrayAverage(ArrayList<Double> list) {
+	public double ArrayAverage(List<Double> list) {
 		//Find total of objects in list and calculate average
 		double count = 0;
 		for (double i : list) {
