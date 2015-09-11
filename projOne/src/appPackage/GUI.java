@@ -47,7 +47,7 @@ public class GUI extends JFrame {
 		JMenu mnNewMenu = new JMenu("File");
 		menuBar.add(mnNewMenu);
 		
-		//ADD DOCUMENTATION
+		//Opens file browser
 		JMenuItem mntmImport = new JMenuItem("Import");
 		mntmImport.addActionListener(new ActionListener() {
 			
@@ -82,7 +82,7 @@ public class GUI extends JFrame {
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		
-		//ADD DCOUMENTATION
+		//Opens dialog box with information on application
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mntmAbout.addActionListener(new ActionListener() {
 			
@@ -104,7 +104,7 @@ public class GUI extends JFrame {
 		
 		fc = new JFileChooser();
 		
-		//ADD DOCUMENTATION
+		//Opens file browser
 		JButton btnBrowse = new JButton("Browse");
 		btnBrowse.addActionListener(new ActionListener() {
 			
@@ -133,7 +133,7 @@ public class GUI extends JFrame {
 		scrollPane.setViewportView(textArea);
 		textArea.setEditable(false);
 		
-		//ADD DOCUMENTATION
+		//Takes input from textArea_1, strips out commas and converts to an ArrayList
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			
@@ -161,7 +161,9 @@ public class GUI extends JFrame {
 		btnSubmit.setBounds(345, 63, 89, 23);
 		contentPane.add(btnSubmit);
 		
-		//ADD DOCUMENTATION
+		//Verify location of desired input and execute logic to add input to array and
+		//print results to textArea. Utilizes AssignmenOne for averaging and Collections 
+		//API for the other functions.
 		JButton btnCompute = new JButton("Compute");
 		btnCompute.addActionListener(new ActionListener() {
 			
