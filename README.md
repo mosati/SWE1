@@ -59,9 +59,9 @@ How the final product works is a GUI window appears and the user enters in the d
 
 How long actually took to complete the project
 * Requirements, Planning, and Design: 45 minutes
-* Coding: 
-* Testing: 
+* Coding: 3 Hours
+* Testing and Revision: 2.5 hours
 * Documentation: 40 minutes
 
-Total time: 
+Total time: ~7 hours
 
