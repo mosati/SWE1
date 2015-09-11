@@ -16,12 +16,10 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.awt.event.ActionEvent;
@@ -33,7 +31,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	public List<Double> valueD;
+	private List<Double> valueD;
 	private JFileChooser fc;
 	
 	public GUI() throws IOException {
@@ -49,7 +47,24 @@ public class GUI extends JFrame {
 		JMenu mnNewMenu = new JMenu("File");
 		menuBar.add(mnNewMenu);
 		
+		//ADD DOCUMENTATION
 		JMenuItem mntmImport = new JMenuItem("Import");
+		mntmImport.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				int returnVal = fc.showOpenDialog(GUI.this);
+				
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+	                File file = fc.getSelectedFile();
+	                
+	                try {
+						textField.setText(file.getCanonicalPath());
+					} catch (IOException ee) {
+						ee.printStackTrace();
+					}
+				}
+			}
+		});
 		mnNewMenu.add(mntmImport);
 		
 		JSeparator separator_1 = new JSeparator();
@@ -67,8 +82,10 @@ public class GUI extends JFrame {
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		
+		//ADD DCOUMENTATION
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mntmAbout.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				String about = ("Integer Tool is an application that calculates the average, "
 						      + "\nminumum, and maximum of a set of numbers. In additon, "
@@ -78,8 +95,8 @@ public class GUI extends JFrame {
 				JOptionPane.showMessageDialog(contentPane, about, "About", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
-		
 		mnHelp.add(mntmAbout);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -87,8 +104,10 @@ public class GUI extends JFrame {
 		
 		fc = new JFileChooser();
 		
+		//ADD DOCUMENTATION
 		JButton btnBrowse = new JButton("Browse");
 		btnBrowse.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				int returnVal = fc.showOpenDialog(GUI.this);
 				
@@ -103,31 +122,8 @@ public class GUI extends JFrame {
 				}			
 			}
 		});
-		
 		btnBrowse.setBounds(345, 23, 89, 23);
 		contentPane.add(btnBrowse);
-		
-		JButton btnSubmit = new JButton("Submit");
-		btnSubmit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String str = textField_1.getText();
-				String[] parts = str.split(",");
-				
-				for (int index = 0; index < parts.length; index++) {
-					parts[index] = parts[index].trim();
-				}
-
-				List<String> valueS = Arrays.asList(parts);
-				
-				valueD = new ArrayList<>(valueS.size());
-				for (String string : valueS) {
-					valueD.add(new Double(string));
-				}
-			}
-		});
-		
-		btnSubmit.setBounds(345, 63, 89, 23);
-		contentPane.add(btnSubmit);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 143, 424, 96);
@@ -137,8 +133,38 @@ public class GUI extends JFrame {
 		scrollPane.setViewportView(textArea);
 		textArea.setEditable(false);
 		
+		//ADD DOCUMENTATION
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				String str = textField_1.getText();
+				String[] parts = str.split(",");
+				
+				
+				for (int index = 0; index < parts.length; index++) {
+					parts[index] = parts[index].trim();
+				}
+
+				List<String> valueS = Arrays.asList(parts);
+				
+				valueD = new ArrayList<>(valueS.size());
+				try {
+				for (String string : valueS) {
+					valueD.add(new Double(string));
+				}
+				} catch (NumberFormatException e2) {
+					textArea.append("Please enter numbers only (in comma-delimited format).\n");
+				}
+			}
+		});
+		btnSubmit.setBounds(345, 63, 89, 23);
+		contentPane.add(btnSubmit);
+		
+		//ADD DOCUMENTATION
 		JButton btnCompute = new JButton("Compute");
 		btnCompute.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {				
 				if (!(textField.getText().equals("")) && (textField_1.getText().equals(""))) {
 					try {
@@ -159,18 +185,16 @@ public class GUI extends JFrame {
 								textArea.append("Average of numbers: " + Double.toString(findAvg.ArrayAverage(list)) + "\n");
 								textArea.append("Largest value: " + Collections.max(list) + "\n");
 								textArea.append("Smallest value: " + Collections.min(list)+ "\n");
-								textArea.append("Values in ascending order: " + list);
+								textArea.append("Values in ascending order: " + list + "\n");
 								
 								s.close();
 							
-						} catch (InputMismatchException e2) {
-							System.err.println("Caught exception: " + e2.getMessage());
+						} catch (Exception e2) {
+							textArea.append("Please use a properly formatted text file.\n");
 						}
-					} catch (FileNotFoundException e1) {
-						e1.printStackTrace();
+					} catch (Exception e1) {
+						textArea.append("Please use a properly formatted text file.\n");
 					}
-							
-					
 				}
 				else {
 					AssignmentOne findAvg = new AssignmentOne();
@@ -179,11 +203,10 @@ public class GUI extends JFrame {
 					textArea.append("Average of numbers: " + Double.toString(findAvg.ArrayAverage(valueD)) + "\n");
 					textArea.append("Largest value: " + Collections.max(valueD) + "\n");
 					textArea.append("Smallest value: " + Collections.min(valueD)+ "\n");
-					textArea.append("Values in ascending order: " + valueD);
+					textArea.append("Values in ascending order: " + valueD + "\n");
 				}
 			}
 		});
-		
 		btnCompute.setBounds(10, 96, 89, 23);
 		contentPane.add(btnCompute);
 		
