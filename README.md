@@ -5,7 +5,7 @@ Make a program that takes in a set of numbers, computes the average, shows the s
 ###Plan
 Coding done by Justin, Testing done by Tyler, and Documentation done by Karl
 
-Program will be coded in Java and we will use version control on GitHub. 
+Program will be coded in Java and we will use git and GitHub for version control. 
 
 The steps we will take to complete the project are:
 
@@ -29,11 +29,11 @@ How long expect to complete the project
 Total time: 4 hours and 25 minutes
 
 ###Design
-Will use the Eclipse IDE and keeping track of version control with GitHub.
+Will use the Eclipse IDE and track revisions with GitHub.
 
 How the program should work:
 
-1. Take in input numbers from a text file that 
+1. Take in input numbers from a text file and user
 
 2. Sanitize the data to make sure it is a valid input of only numbers
 
@@ -43,9 +43,9 @@ How the program should work:
 
   * Make separate method to compute the average of the list
 
-  * Sort the list using built in classes
+  * Sort the list using existing library
 
-  * Find the smallest and largest number of the list using built in classes
+  * Find the smallest and largest number of the list using existing library
 
 5. Output the important information to the user using a GUI
 
@@ -55,13 +55,13 @@ How the program should work:
 
 ###Final Product
 
-How the final product works is a GUI window appears and the user enters in the desired numbers for the input, the program does the calculations, and then the required output appears in the window.
+The final product launches a GUI window in which the user enters the desired numbers in comma-delimited format (or specifies a text file), the program does the calculations, and then the required output appears in the window.
 
 How long actually took to complete the project
 * Requirements, Planning, and Design: 45 minutes
-* Coding: 3 Hours
-* Testing and Revision: 2.5 hours
+* Coding: 2.5 Hours
+* Testing and Revision: 1.5 hours
 * Documentation: 40 minutes
 
-Total time: ~7 hours
+Total time: ~5.5 hours
 
