@@ -36,7 +36,7 @@ public class GUI extends JFrame {
 	
 	public GUI() throws IOException {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(GUI.class.getResource("/appPackage/calculator-icon.png")));
-		setTitle("Integer Tool");
+		setTitle("Number Tool");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -87,11 +87,11 @@ public class GUI extends JFrame {
 		mntmAbout.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				String about = ("Integer Tool is an application that calculates the average, "
+				String about = ("Number Tool is an application that calculates the average, "
 						      + "\nminumum, and maximum of a set of numbers. In additon, "
 						      + "\nit will display those numbers in ascending order.\n\n"
-						      + "Input can be taken as a text file of real numbers or entered"
-						      + "\nin comma-delimited format.");
+						      + "Input can be taken as a text file of real numbers "
+						      + "\nor entered manually in comma-delimited format.");
 				JOptionPane.showMessageDialog(contentPane, about, "About", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
@@ -150,9 +150,9 @@ public class GUI extends JFrame {
 				
 				valueD = new ArrayList<>(valueS.size());
 				try {
-				for (String string : valueS) {
-					valueD.add(new Double(string));
-				}
+					for (String string : valueS) {
+						valueD.add(new Double(string));
+					}
 				} catch (NumberFormatException e2) {
 					textArea.append("Please enter numbers only (in comma-delimited format).\n");
 				}
