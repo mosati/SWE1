@@ -57,6 +57,12 @@ How the program should work:
 
 5. Output the important information to the user using a GUI
 
+###Testing
+Eight test cases written to validate proper execution and stability of program.
+
+  * Valid input independently calculated and referenced against output from program
+  * Invalid input to test how program reacts and ensure fringe cases are handled
+
 ###Final Product
 
 The final product launches a GUI window in which the user enters the desired numbers in comma-delimited format (or specifies a text file), the program does the calculations, and then the required output appears in the window.
